@@ -4,7 +4,9 @@ Zero-downtime migrations of large tables in MySQL.
 
 See the example for usage. Make sure you have an index on updated_at.
 
-Install as a rails plugin: `./script/plugin install git://github.com/freels/table_migrator.git`
+To use, simply add the gem to your Rails project's Gemfile and 'bundle install' :
+
+	gem 'table_migrator', :git => 'git@github.com:vitalsource/table_migrator.git'
 
 
 ### What this does
