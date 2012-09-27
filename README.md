@@ -182,6 +182,7 @@ copy data (if multi_pass is enabled) and perform the actual table move.  It assu
     $ NEXT_EPOCH="Tue Feb 16 13:22:14 -0800 2010" RAILS_ENV=production rake db:migrate
 
 ## Contributors
+
 - Matt Freels
 - Rohith Ravi
 - Rick Olson
