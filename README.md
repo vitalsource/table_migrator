@@ -185,7 +185,5 @@ copy data (if multi_pass is enabled) and perform the actual table move.  It assu
 - Matt Freels
 - Rohith Ravi
 - Rick Olson
-- Nicholas A. Evans
-- Greg Hazel
 
 Copyright (c) 2009 Serious Business, released under the MIT license.

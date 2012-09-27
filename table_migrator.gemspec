@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "table_migrator"
-  s.version     = '0.0.3'
+  s.version     = '0.0.2'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Matt Freels", "Rohith Ravi", "Rick Olson",]
   s.email       = ["matt@freels.name"]
@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
     swapping in the new table.
   EOF
 
-  s.add_dependency "activerecord", "~>3.2.0"
+  s.add_dependency "activerecord", "~>2.3.5"
 
   s.files        = Dir.glob("lib/**/*") +%w[README.md]
   s.require_path = 'lib'
