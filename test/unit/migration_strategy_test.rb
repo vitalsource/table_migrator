@@ -4,7 +4,10 @@ require 'active_record/connection_adapters/abstract/schema_definitions'
 require 'table_migrator'
 
 class MigrationStrategyTest < Test::Unit::TestCase
-  MigrationStrategy = ::TableMigrator::MigrationStrategy
+ # MigrationStrategy = ::TableMigrator::MigrationStrategy
+
+MigrationStrategy = ::TableMigrator::ChangeTableStrategy
+
   Table = ::ActiveRecord::ConnectionAdapters::Table
   Connection = ActiveRecord::Base.connection
 
