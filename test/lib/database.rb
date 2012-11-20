@@ -1,9 +1,15 @@
 require 'active_record'
 
+# When setting up your system for testing, store
+# the MySQL password in an environment variable
+# > export TABLE_MIGRATOR_KEY='secret'
+
+
 ActiveRecord::Base.establish_connection({
   :adapter => 'mysql',
   :host => 'localhost',
-  :user => 'root',
+  :username => 'table_migrator',
+  :password => ENV["TABLE_MIGRATOR_KEY"],
   :database => 'table_migrator_test'
 })
 
