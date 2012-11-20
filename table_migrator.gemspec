@@ -21,6 +21,12 @@ Gem::Specification.new do |s|
 
   s.add_dependency "activerecord", "~>3.2.0"
 
+  s.add_development_dependency "rake", "~>0.9.2.2"
+  s.add_development_dependency "shoulda"
+
+  # WARNING : At least on Mac OS X, MySQL gem requires C headers for native extension
+  s.add_development_dependency "mysql", '~>2.8.1'
+
   s.files        = Dir.glob("lib/**/*") +%w[README.md]
   s.require_path = 'lib'
 
