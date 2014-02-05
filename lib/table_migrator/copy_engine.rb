@@ -63,6 +63,7 @@ module TableMigrator
     def down!
       in_table_lock(table_name, old_table_name) do
         execute("ALTER TABLE `#{table_name}` RENAME TO `#{new_table_name}`")
+        execute("LOCK TABLES `#{new_table_name}` WRITE")
         execute("ALTER TABLE `#{old_table_name}` RENAME TO `#{table_name}`")
         execute("DROP TABLE `#{new_table_name}`")
       end
