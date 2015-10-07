@@ -4,14 +4,25 @@ require 'active_record'
 # the MySQL password in an environment variable
 # > export TABLE_MIGRATOR_KEY='secret'
 
+db_attrs = {
+    :adapter => 'mysql',
+    :host => 'localhost',
+    :username => 'root',
+    :password => ENV["TABLE_MIGRATOR_KEY"]
+}
 
-ActiveRecord::Base.establish_connection({
-  :adapter => 'mysql',
-  :host => 'localhost',
-  :username => 'table_migrator',
-  :password => ENV["TABLE_MIGRATOR_KEY"],
-  :database => 'table_migrator_test'
-})
+ActiveRecord::Base.establish_connection(db_attrs)
+
+ActiveRecord::Base.connection.execute("DROP DATABASE IF EXISTS table_migrator_test")
+ActiveRecord::Base.connection.execute("CREATE DATABASE table_migrator_test")
+
+ActiveRecord::Base.establish_connection(
+    db_attrs.merge(
+        {
+            :database => 'table_migrator_test'
+        }
+    )
+)
 
 def create_users
   ActiveRecord::Schema.define do
