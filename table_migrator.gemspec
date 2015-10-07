@@ -23,9 +23,11 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "rake", "~>0.9.2.2"
   s.add_development_dependency "shoulda"
+  s.add_development_dependency "shoulda-context"
+  s.add_development_dependency "test-unit"
 
   # WARNING : Compiling native extensions for gem requires installing C headers for MySQL
-  s.add_development_dependency "mysql", '~>2.8.1'
+  s.add_development_dependency "mysql", '~>2.9.1'
 
   s.files        = Dir.glob("lib/**/*") +%w[README.md]
   s.require_path = 'lib'
