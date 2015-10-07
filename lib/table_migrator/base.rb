@@ -64,6 +64,10 @@ module TableMigrator
       engine.create_table_and_copy_info
     end
 
+    def new_table
+      strategy.new_table.to_sym
+    end
+
     private
 
     def strategy
