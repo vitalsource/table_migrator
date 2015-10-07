@@ -30,7 +30,7 @@ def create_users
       t.string :name, :null => false
       t.string :email
       # t.string :short_bio
-      t.timestamps
+      t.timestamps null: false
     end
 
     add_index :users, :updated_at
