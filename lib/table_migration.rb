@@ -1,7 +1,7 @@
 require 'active_record'
 require 'table_migrator/base'
 
-class TableMigration < ActiveRecord::Migration
+class TableMigration < ActiveRecord::Migration[5.1]
   class << self
     attr_reader :table_migrator
     delegate :schema_changes,          :to => :table_migrator
