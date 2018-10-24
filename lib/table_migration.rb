@@ -1,7 +1,14 @@
 require 'active_record'
 require 'table_migrator/base'
 
-class TableMigration < ActiveRecord::Migration
+migration_class =
+  if ActiveRecord::VERSION::MAJOR >= 5
+    ActiveRecord::Migration[5.2]
+  else
+    ActiveRecord::Migration
+  end
+
+class TableMigration < migration_class
   class << self
     attr_reader :table_migrator
     delegate :schema_changes,          :to => :table_migrator
