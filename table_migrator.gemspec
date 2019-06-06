@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "table_migrator"
-  s.version     = '0.1.1'
+  s.version     = '0.1.2'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Matt Freels", "Rohith Ravi", "Rick Olson",]
   s.email       = ["matt@freels.name"]
