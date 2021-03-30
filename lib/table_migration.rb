@@ -3,7 +3,7 @@ require 'table_migrator/base'
 
 migration_class =
   if ActiveRecord::VERSION::MAJOR >= 5
-    ActiveRecord::Migration[5.2]
+    ActiveRecord::Migration[ActiveRecord::VERSION::STRING.to_f]
   else
     ActiveRecord::Migration
   end
