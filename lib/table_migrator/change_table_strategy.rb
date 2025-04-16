@@ -21,7 +21,12 @@ module TableMigrator
 
     def apply_changes
       changes.each do |method, args|
-        connection.send(method, new_table, *args)
+        if args.last.is_a?(Hash) && method_accepts_keywords?(connection.method(method))
+          kwargs = args.pop
+          connection.send(method, new_table, *args, **kwargs)
+        else
+          connection.send(method, new_table, *args)
+        end
       end
     end
 
@@ -71,6 +76,12 @@ module TableMigrator
 
     def register_remove_timestamps
       register_remove_column :created_at, :updated_at
+    end
+
+    private
+
+    def method_accepts_keywords?(method)
+      method.parameters.any? { |type, _| type == :key || type == :keyreq || type == :keyrest }
     end
   end
 end
